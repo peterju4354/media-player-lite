@@ -1,6 +1,6 @@
 {
   "name": "media-player-lite",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "This module generates a video player element in their web page",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "url": "https://github.com/peterju4354/media-player-lite"
   },
   "author": "Peter Ju",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "xgplayer": "^3.0.5"
   }

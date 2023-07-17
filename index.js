@@ -21,7 +21,7 @@ import MediaPlayer from './MediaPlayer'
  * @param {*} urlList 
  * @returns {MediaPlayer}
  */
-function initPlayer(id, width, height, urlList, enableFlv=false) {
+function initPlayer(id, width, height, urlList) {
     let pluginConfig 
     // if (enableFlv && FlvPlugin.isSupported()) {
     //     pluginConfig = [FlvPlugin, Slower, Faster, PlayAfter, PlayBefore]
