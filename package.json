@@ -1,6 +1,6 @@
 {
   "name": "media-player-lite",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "This module generates a video player element in their web page",
   "main": "index.js",
   "scripts": {

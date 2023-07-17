@@ -9,7 +9,7 @@ npm install media-player-lite
 ```javascript
 import { initPlayer } from 'media-player-lite'
 
-const player = initPlayer(id, width, height, list)
+const player = initPlayer(id, width, height, list, poster)
 player.play()
 ```
 
@@ -19,6 +19,7 @@ id: the id of the HTML element {String}
 width: width of the player {Number}
 height: height of the player {Number}
 list: the playlist {Array}
+poster: the poster url of the video player {String}
 ```
 
 ## License

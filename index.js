@@ -1,4 +1,3 @@
-import Start from 'xgplayer/es/plugins/start'
 import './style/index.min.css'
 import 'xgplayer/dist/index.min.js'
 import Slower from './plugins/slower'
@@ -21,14 +20,14 @@ import MediaPlayer from './MediaPlayer'
  * @param {*} urlList 
  * @returns {MediaPlayer}
  */
-function initPlayer(id, width, height, urlList) {
+function initPlayer(id, width, height, urlList, poster='') {
     let pluginConfig 
     // if (enableFlv && FlvPlugin.isSupported()) {
     //     pluginConfig = [FlvPlugin, Slower, Faster, PlayAfter, PlayBefore]
     // } else {
     //     pluginConfig = [Slower, Faster, PlayAfter, PlayBefore]
     // }
-    pluginConfig = [Start, Slower, Faster, PlayAfter, PlayBefore]
+    pluginConfig = [Slower, Faster, PlayAfter, PlayBefore]
 
     return new MediaPlayer({
         id: id,
@@ -37,7 +36,7 @@ function initPlayer(id, width, height, urlList) {
         height: height,
         videoInit: true,
         ignores: ['time', 'cssfullscreen', 'fullscreen', 'playbackrate'],
-        "poster": "https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/byted-player-videos/1.0.0/poster.jpg",
+        "poster": poster,
         closeVideoClick: true,
         controls: {
             mode: 'flex',
