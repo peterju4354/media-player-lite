@@ -1,6 +1,6 @@
-import Player from 'xgplayer'
+import SimplePlayer from 'xgplayer'
 
-class MediaPlayer extends Player {
+class MediaPlayer extends SimplePlayer {
     constructor(options, list) {
         super(options)
         this.urlList = list

@@ -1,4 +1,4 @@
-import Player from 'xgplayer'
+import Start from 'xgplayer/es/plugins/start'
 import './style/index.min.css'
 import 'xgplayer/dist/index.min.js'
 import Slower from './plugins/slower'
@@ -6,7 +6,7 @@ import Faster from './plugins/faster'
 import PlayAfter from './plugins/playAfter'
 import PlayBefore from './plugins/playBefore'
 // import FlvPlugin from 'xgplayer-flv'
-import WebMediaPlayer from './MediaPlayer'
+import MediaPlayer from './MediaPlayer'
 
 
 // urlList=['http://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-720p.mp4', 
@@ -28,9 +28,9 @@ function initPlayer(id, width, height, urlList, enableFlv=false) {
     // } else {
     //     pluginConfig = [Slower, Faster, PlayAfter, PlayBefore]
     // }
-    pluginConfig = [Slower, Faster, PlayAfter, PlayBefore]
+    pluginConfig = [Start, Slower, Faster, PlayAfter, PlayBefore]
 
-    return new WebMediaPlayer({
+    return new MediaPlayer({
         id: id,
         url: urlList[0],
         width: width,
