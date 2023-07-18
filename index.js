@@ -14,10 +14,10 @@ function initPlayer(e, width, height, urlList, poster='') {
     // } else {
     //     pluginConfig = [Slower, Faster, PlayAfter, PlayBefore]
     // }
-    let selecter = (!(e instanceof String)) ? { el: e } : { id: e }
+    let selector = (!(e instanceof String)) ? { el: e } : { id: e }
 
     const player = new MediaPlayer({
-        ...selecter,
+        ...selector,
         url: urlList[0],
         width: width,
         height: height,
