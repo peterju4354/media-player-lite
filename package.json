@@ -1,7 +1,7 @@
 {
   "name": "media-player-lite",
-  "version": "0.2.4",
-  "description": "The user now can customize the selector of the media player (supports by id or by element)",
+  "version": "0.2.5",
+  "description": "Minor fixes",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

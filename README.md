@@ -9,13 +9,13 @@ npm install media-player-lite
 ```javascript
 import { initPlayer } from 'media-player-lite'
 
-const player = initPlayer(id, width, height, list, poster)
+const player = initPlayer(e, width, height, list, poster)
 player.play()
 ```
 
 ## Parameters
 ```
-id: the id of the HTML element {String}
+e: the selector {Object}
 width: width of the player {Number}
 height: height of the player {Number}
 list: the playlist {Array}

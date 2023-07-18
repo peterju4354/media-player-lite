@@ -14,7 +14,7 @@ function initPlayer(e, width, height, urlList, poster='') {
     // } else {
     //     pluginConfig = [Slower, Faster, PlayAfter, PlayBefore]
     // }
-    let selector = (!(e instanceof String)) ? { el: e } : { id: e }
+    const selector = (!(e instanceof String)) ? { el: e } : { id: e }
 
     const player = new MediaPlayer({
         ...selector,
@@ -27,9 +27,7 @@ function initPlayer(e, width, height, urlList, poster='') {
         'pip','progresspreview','xglogger','prompt','fpsdetect','miniscreen','keyboard'],
         "poster": poster,
         closeVideoClick: true,
-        controls: {
-            mode: 'flex',
-        },
+        controls: { mode: 'flex' },
         plugins: pluginConfig,
     }, urlList
     )
