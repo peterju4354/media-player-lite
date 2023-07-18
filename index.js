@@ -7,19 +7,6 @@ import PlayBefore from './plugins/playBefore'
 // import FlvPlugin from 'xgplayer-flv'
 import MediaPlayer from './MediaPlayer'
 
-
-// urlList=['http://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-720p.mp4', 
-// 'https://www.openbeelden.nl/files/13/02/1303068.1302226.BG27239MPG_-HRE000033CB_2374760_2692600.mp4']
-
-/**
- *
- * @param {*} id 
- * @param {*} url 
- * @param {*} width 
- * @param {*} height 
- * @param {*} urlList 
- * @returns {MediaPlayer}
- */
 function initPlayer(id, width, height, urlList, poster='') {
     let pluginConfig 
     // if (enableFlv && FlvPlugin.isSupported()) {
@@ -29,24 +16,25 @@ function initPlayer(id, width, height, urlList, poster='') {
     // }
     pluginConfig = [Slower, Faster, PlayAfter, PlayBefore]
 
-    return new MediaPlayer({
+    const player = new MediaPlayer({
         id: id,
         url: urlList[0],
         width: width,
         height: height,
         videoInit: true,
-        ignores: ['time', 'cssfullscreen', 'fullscreen', 'playbackrate'],
+        ignores: ['time', 'cssfullscreen', 'fullscreen', 'playbackrate', 'download', 'rotate', 'screenshot',
+        'waitingtimeoutjump','stats','thumbnail','testspeed','dynamicbg','gapjump','miniprogress','playnext',
+        'pip','progresspreview','xglogger','prompt','fpsdetect','miniscreen','keyboard'],
         "poster": poster,
         closeVideoClick: true,
         controls: {
             mode: 'flex',
         },
-        // urlList: urlList,
-        // playId: 0,
         plugins: pluginConfig,
     }, urlList
-)
-    // return player
+    )
+
+    return player
 }
 
 
