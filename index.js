@@ -7,17 +7,17 @@ import PlayBefore from './plugins/playBefore'
 // import FlvPlugin from 'xgplayer-flv'
 import MediaPlayer from './MediaPlayer'
 
-function initPlayer(id, width, height, urlList, poster='') {
-    let pluginConfig 
+function initPlayer(e, width, height, urlList, poster='') {
+    const pluginConfig = [Slower, Faster, PlayAfter, PlayBefore]
     // if (enableFlv && FlvPlugin.isSupported()) {
     //     pluginConfig = [FlvPlugin, Slower, Faster, PlayAfter, PlayBefore]
     // } else {
     //     pluginConfig = [Slower, Faster, PlayAfter, PlayBefore]
     // }
-    pluginConfig = [Slower, Faster, PlayAfter, PlayBefore]
+    let selecter = (!(e instanceof String)) ? { el: e } : { id: e }
 
     const player = new MediaPlayer({
-        id: id,
+        ...selecter,
         url: urlList[0],
         width: width,
         height: height,
