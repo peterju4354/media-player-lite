@@ -1,5 +1,6 @@
-import './style/index.min.css'
 import 'xgplayer/dist/index.min.js'
+import 'xgplayer/dist/index.min.css'
+import './style/index.min.css'
 import Slower from './plugins/slower'
 import Faster from './plugins/faster'
 import PlayAfter from './plugins/playAfter'
@@ -24,7 +25,7 @@ function initPlayer(e, width, height, urlList, poster='') {
         videoInit: true,
         ignores: ['time', 'cssfullscreen', 'fullscreen', 'playbackrate', 'download', 'rotate', 'screenshot',
         'waitingtimeoutjump','stats','thumbnail','testspeed','dynamicbg','gapjump','miniprogress','playnext',
-        'pip','progresspreview','xglogger','prompt','fpsdetect','miniscreen','keyboard'],
+        'pip','xglogger','prompt','fpsdetect','miniscreen','keyboard'],
         "poster": poster,
         closeVideoClick: true,
         controls: { mode: 'flex' },
