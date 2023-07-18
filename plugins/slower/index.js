@@ -3,9 +3,7 @@ import { Plugin } from "xgplayer";
 const { POSITIONS } = Plugin
 
 export default class Slower extends Plugin {
-    static get pluginName() {
-        return 'slower'
-    }
+    static get pluginName() { return 'slower' }
 
     static get defaultConfig() {
         return{ 
@@ -14,20 +12,14 @@ export default class Slower extends Plugin {
         }
     }   
 
-    constructor(args) {
-        super(args)
-    }
+    constructor(args) { super(args) }
 
     afterCreate() {
         this.icon = this.find('.icon')
         this.onClick = () => {
-            if (this.player.playbackRate == 1) {
-                this.player.playbackRate = 0.5
-            } else {
-                this.player.playbackRate = 1
-            }
+            if (this.player.playbackRate == 1) this.player.playbackRate = 0.5
+            else this.player.playbackRate = 1
         }
-
         this.bind('click', this.onClick)
     }
 
@@ -36,9 +28,7 @@ export default class Slower extends Plugin {
         this.icon = null
     }
 
-    show() {
-        super.show()
-    }
+    show() { super.show() }
 
     render() {
         return `<xg-icon><div class="xgplayer-icon">

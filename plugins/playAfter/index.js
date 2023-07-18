@@ -3,47 +3,32 @@ import { Events } from "xgplayer";
 const { POSITIONS } = Plugin
 
 export default class PlayAfter extends Plugin {
-    static get pluginName() {
-        return 'Play After'
-    }
-
+    static get pluginName() { return 'Play After' }
     static get defaultConfig() {
-        return{ 
-            position: POSITIONS.CONTROLS_LEFT,
-            index: 2,
-        }
+      return{ 
+          position: POSITIONS.CONTROLS_LEFT,
+          index: 2,
+      }
     }   
-
-    constructor(args) {
-        super(args)
-    }
-
+    constructor(args) { super(args) }
     afterCreate() {
-        this.icon = this.find('.icon')
-
-        this.onClick = () => {
-          if (this.player.urlList.length <= this.player.playerId + 1) {
-            this.changeSrc(this.player.currentSrc)
-          } else {
-            this.player.playerId++
-            this.changeSrc(this.player.urlList[this.player.playerId])
-          }
+      this.icon = this.find('.icon')
+      this.onClick = () => {
+        if (this.player.urlList.length <= this.player.playerId + 1) { this.changeSrc(this.player.currentSrc) }
+        else {
+          this.player.playerId++
+          this.changeSrc(this.player.urlList[this.player.playerId])
         }
-        this.bind('click', this.onClick)
+      }
+      this.bind('click', this.onClick)
     }
-
     changeSrc (url) {
       const { player } = this
-      if (!url) {
-        return
-      }
+      if (!url) {return}
       player.pause()
       player.currentTime = 0
-      if (player.switchURL) {
-        player.switchURL(url)
-      } else {
-        player.src = url
-      }
+      if (player.switchURL) { player.switchURL(url) }
+      else { player.src = url }
       player.config.url = url
       player.play()
     }
@@ -53,9 +38,7 @@ export default class PlayAfter extends Plugin {
         this.icon = null
     }
 
-    show() {
-        super.show()
-    }
+    show() { super.show() }
 
     render() {
         return `<xg-icon><div class="xgplayer-icon">

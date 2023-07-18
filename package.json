@@ -1,11 +1,8 @@
 {
   "name": "media-player-lite",
-  "version": "1.0.0",
-  "description": "Stabler and lighter",
+  "version": "1.0.1",
+  "description": "Disabled double click to fullscreen",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": ["video","audio","player","js","html"],
   "repository": {
     "type": "git",
@@ -14,6 +11,6 @@
   "author": "Peter Ju",
   "license": "MIT",
   "dependencies": {
-    "xgplayer": "^3.0.5"
+    "xgplayer": "^3.x"
   }
 }

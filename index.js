@@ -28,6 +28,7 @@ function initPlayer(e, width, height, urlList, poster='') {
         'pip','xglogger','prompt','fpsdetect','miniscreen','keyboard'],
         "poster": poster,
         closeVideoClick: true,
+        closeVideoDblclick: true,
         controls: { mode: 'flex' },
         plugins: pluginConfig,
     }, urlList
