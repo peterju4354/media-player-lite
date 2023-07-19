@@ -41,8 +41,6 @@ export default class PlayAfter extends Plugin {
     show() { super.show() }
 
     render() {
-        return `<xg-icon><div class="xgplayer-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="40" viewBox="10 0 24 40">\n  <path transform="scale(0.038 0.028)" d="M800 380v768h-128v-352l-320 320v-704l320 320v-352z"></path>\n</svg></div>
-        <div class='xg-tips'>${this.pluginName}</div></xg-icon>`
+        return `<xg-icon><div class="xgplayer-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="40" viewBox="10 0 24 40">\n  <path transform="scale(0.038 0.028)" d="M800 380v768h-128v-352l-320 320v-704l320 320v-352z"></path>\n</svg></div><div class='xg-tips'>${this.pluginName}</div></xg-icon>`
     }
 }

@@ -7,21 +7,13 @@ class MediaPlayer extends SimplePlayer {
         this.playerId = 0
     }
 
-    get urlList() {
-        return this._urlList
-    }
+    get urlList() { return this._urlList }
 
-    get playerId() {
-        return this._playerId
-    }
+    get playerId() { return this._playerId }
 
-    set urlList(value) {
-        this._urlList = value
-    }
+    set urlList(value) { this._urlList = value }
 
-    set playerId(value) {
-        this._playerId = value
-    }
+    set playerId(value) { this._playerId = value }
 }
 
 export default MediaPlayer

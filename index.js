@@ -5,38 +5,42 @@ import Slower from './plugins/slower'
 import Faster from './plugins/faster'
 import PlayAfter from './plugins/playAfter'
 import PlayBefore from './plugins/playBefore'
-// import FlvPlugin from 'xgplayer-flv'
 import MediaPlayer from './MediaPlayer'
 
-function initPlayer(e, width, height, urlList, poster='') {
-    const pluginConfig = [Slower, Faster, PlayAfter, PlayBefore]
-    // if (enableFlv && FlvPlugin.isSupported()) {
-    //     pluginConfig = [FlvPlugin, Slower, Faster, PlayAfter, PlayBefore]
-    // } else {
-    //     pluginConfig = [Slower, Faster, PlayAfter, PlayBefore]
-    // }
+export function initPlayer(e, urlList, width, height, poster='') {
     const selector = (!(e instanceof String)) ? { el: e } : { id: e }
-
-    const player = new MediaPlayer({
+    return new MediaPlayer({
         ...selector,
         url: urlList[0],
         width: width,
         height: height,
+        "poster": poster,
+
         videoInit: true,
         ignores: ['time', 'cssfullscreen', 'fullscreen', 'playbackrate', 'download', 'rotate', 'screenshot',
         'waitingtimeoutjump','stats','thumbnail','testspeed','dynamicbg','gapjump','miniprogress','playnext',
         'pip','xglogger','prompt','fpsdetect','miniscreen','keyboard'],
-        "poster": poster,
         closeVideoClick: true,
         closeVideoDblclick: true,
         controls: { mode: 'flex' },
-        plugins: pluginConfig,
-    }, urlList
-    )
-
-    return player
+        plugins: [Slower, Faster, PlayAfter, PlayBefore],
+    }, urlList)
 }
 
+export function initPlayerConfig(e, urlList, config={}) {
+    const selector = (!(e instanceof String)) ? { el: e } : { id: e }
+    return new MediaPlayer({
+        videoInit: true,
+        ignores: ['time', 'cssfullscreen', 'fullscreen', 'playbackrate', 'download', 'rotate', 'screenshot',
+        'waitingtimeoutjump','stats','thumbnail','testspeed','dynamicbg','gapjump','miniprogress','playnext',
+        'pip','xglogger','prompt','fpsdetect','miniscreen','keyboard'],
+        closeVideoClick: true,
+        closeVideoDblclick: true,
+        controls: { mode: 'flex' },
+        plugins: [Slower, Faster, PlayAfter, PlayBefore],
 
-
-export { initPlayer }
+        ...selector,
+        ...config,
+        url: urlList[0]
+    }, urlList)
+}

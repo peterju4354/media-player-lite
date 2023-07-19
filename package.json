@@ -1,7 +1,7 @@
 {
   "name": "media-player-lite",
-  "version": "1.0.1",
-  "description": "Disabled double click to fullscreen",
+  "version": "1.0.2",
+  "description": "Stabler and Lighter",
   "main": "index.js",
   "keywords": ["video","audio","player","js","html"],
   "repository": {
